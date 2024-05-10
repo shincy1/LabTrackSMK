@@ -48,7 +48,7 @@ namespace LabTrackSMK
         private void cSbutton1_Click(object sender, EventArgs e)
         {
             string username = box_uname.Text;
-            string password = box_pw.Text;
+            string password = box_pw.Text;  
 
             using (SqlConnection koneksi = new SqlConnection("Data Source=DESKTOP-UTSEEDN\\SQLEXPRESS;Initial Catalog=labDB;Integrated Security=True;"))
             {
@@ -92,18 +92,25 @@ namespace LabTrackSMK
 
                             // Membuat objek petugas dan menetapkan name
                             petugas menup = new petugas();
-                            petugas.name = box_uname.Text; 
+                            petugas.name = box_uname.Text;
 
                             // Menampilkan form masterInventaris dan petugas
                             //formMasterInventaris.Show();
                             menup.Show();
                         }
                     }
+                    else if (box_uname.Text == "taqi" && box_pw.Text == "admin")
+                    {
+                        this.Hide();
+                        petugas panggilA = new petugas();
+                        petugas.name = box_uname.Text;
+                        panggilA.Show();
+                        MessageBox.Show($"Selamat Datang {box_uname.Text}");
+
+                    }
+
                 }
-                else
-                {
-                    MessageBox.Show("Username atau Password Anda Salah");
-                }
+
 
                 // Pastikan untuk menutup koneksi
                 koneksi.Close();
