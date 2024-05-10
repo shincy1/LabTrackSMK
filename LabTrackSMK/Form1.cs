@@ -14,7 +14,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LabTrackSMK
 {
-    //tes
+    //push repo s
+    //push repo fg
     public partial class Form1 : Form
     {
         public SqlConnection connection = new SqlConnection("Data Source=DESKTOP-UTSEEDN\\SQLEXPRESS;Initial Catalog=labDB;Integrated Security=True;");
