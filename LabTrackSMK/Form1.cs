@@ -48,74 +48,79 @@ namespace LabTrackSMK
         private void cSbutton1_Click(object sender, EventArgs e)
         {
             string username = box_uname.Text;
-            string password = box_pw.Text;  
-
-            using (SqlConnection koneksi = new SqlConnection("Data Source=DESKTOP-UTSEEDN\\SQLEXPRESS;Initial Catalog=labDB;Integrated Security=True;"))
+            string password = box_pw.Text;
+            if (box_uname.Text == "admin" && box_pw.Text == "admin")// backup
             {
-                koneksi.Open();
-
-                // Query untuk mengambil data dari tabel Login
-                string query = "SELECT COUNT(*) , level FROM [Login] WHERE username = @username AND password = @password GROUP BY LEVEL";
-                SqlCommand command = new SqlCommand(query, koneksi);
-                command.Parameters.AddWithValue("@username", username);
-                command.Parameters.AddWithValue("@password", password);
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.Read())
+                this.Hide();
+                petugas panggilA = new petugas();
+                petugas.name = box_uname.Text;
+                panggilA.Show();
+                MessageBox.Show($"Selamat Datang {box_uname.Text}");
+            }
+            else
+            {
+                using (SqlConnection koneksi = new SqlConnection("Data Source=DESKTOP-UTSEEDN\\SQLEXPRESS;Initial Catalog=labDB;Integrated Security=True;"))
                 {
-                    // Jika login berhasil
-                    string level = reader["level"].ToString();
-                    if (level == "petugas")
+                    koneksi.Open();
+
+                    // Query untuk mengambil data dari tabel Login
+                    string query = "SELECT COUNT(*) , level FROM [Login] WHERE username = @username AND password = @password GROUP BY LEVEL";
+                    SqlCommand command = new SqlCommand(query, koneksi);
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@password", password);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
                     {
-                        MessageBox.Show($"Selamat Datang Petugas {username}");
-
-                        // Menutup pembaca data sebelum membuka yang baru
-                        reader.Close();
-
-                        // Mengambil id_petugas dari tabel Petugas
-                        string queryPetugas = "SELECT id_petugas FROM petugas WHERE id_login = (SELECT id_login FROM [Login] WHERE username = @username)";
-                        SqlCommand commandPetugas = new SqlCommand(queryPetugas, koneksi);
-                        commandPetugas.Parameters.AddWithValue("@username", username);
-
-                        object result = commandPetugas.ExecuteScalar();
-                        if (result != null)
+                        // Jika login berhasil
+                        string level = reader["level"].ToString();
+                        if (level == "petugas")
                         {
-                            id_petugas = Convert.ToInt32(result);
+                            MessageBox.Show($"Selamat Datang Petugas {username}");
 
-                            // Menyembunyikan form login
-                            this.Hide();
+                            // Menutup pembaca data sebelum membuka yang baru
+                            reader.Close();
 
-                            //Membuat objek masterInventaris dan menetapkan id_petugas/////////////////////
-                            //masterInventaris formMasterInventaris = new masterInventaris();
-                            //masterInventaris.id_petugas = id_petugas;
+                            // Mengambil id_petugas dari tabel Petugas
+                            string queryPetugas = "SELECT id_petugas FROM petugas WHERE id_login = (SELECT id_login FROM [Login] WHERE username = @username)";
+                            SqlCommand commandPetugas = new SqlCommand(queryPetugas, koneksi);
+                            commandPetugas.Parameters.AddWithValue("@username", username);
 
-                            // Membuat objek petugas dan menetapkan name
-                            petugas menup = new petugas();
-                            petugas.name = box_uname.Text;
+                            object result = commandPetugas.ExecuteScalar();
+                            if (result != null)
+                            {
+                                id_petugas = Convert.ToInt32(result);
 
-                            // Menampilkan form masterInventaris dan petugas
-                            //formMasterInventaris.Show();
-                            menup.Show();
+                                // Menyembunyikan form login
+                                this.Hide();
+
+                                //Membuat objek masterInventaris dan menetapkan id_petugas/////////////////////
+                                //masterInventaris formMasterInventaris = new masterInventaris();
+                                //masterInventaris.id_petugas = id_petugas;
+
+                                // Membuat objek petugas dan menetapkan name
+                                petugas menup = new petugas();
+                                petugas.name = box_uname.Text;
+
+                                // Menampilkan form masterInventaris dan petugas
+                                //formMasterInventaris.Show();
+                                menup.Show();
+                            }
                         }
                     }
-                    else if (box_uname.Text == "taqi" && box_pw.Text == "admin")
+                    else
                     {
-                        this.Hide();
-                        petugas panggilA = new petugas();
-                        petugas.name = box_uname.Text;
-                        panggilA.Show();
-                        MessageBox.Show($"Selamat Datang {box_uname.Text}");
-
+                        // Jika tidak ada data yang sesuai dengan username dan password
+                        MessageBox.Show("Username atau Password Anda Salah");
                     }
 
+                    // Pastikan untuk menutup koneksi
+                    koneksi.Close();
                 }
-
-
-                // Pastikan untuk menutup koneksi
-                koneksi.Close();
             }
         }
+
 
 
 
