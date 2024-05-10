@@ -39,12 +39,12 @@
             this.box_pw = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.cSbutton1 = new LabTrackSMK.Custom_Component.CSbutton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,6 +110,7 @@
             this.box_uname.Name = "box_uname";
             this.box_uname.Size = new System.Drawing.Size(328, 20);
             this.box_uname.TabIndex = 6;
+            this.box_uname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_uname_KeyDown);
             // 
             // label5
             // 
@@ -131,6 +132,7 @@
             this.box_pw.PasswordChar = '■';
             this.box_pw.Size = new System.Drawing.Size(328, 20);
             this.box_pw.TabIndex = 8;
+            this.box_pw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.box_pw_KeyDown);
             // 
             // panel6
             // 
@@ -155,6 +157,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(413, 474);
             this.panel2.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Jura", 9F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(15, 300);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(339, 72);
+            this.label3.TabIndex = 4;
+            this.label3.Text = resources.GetString("label3.Text");
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -210,18 +224,6 @@
             this.label9.TabIndex = 4;
             this.label9.Text = "LOGIN";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Jura", 9F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(15, 300);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(339, 72);
-            this.label3.TabIndex = 4;
-            this.label3.Text = resources.GetString("label3.Text");
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // cSbutton1
             // 
             this.cSbutton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(163)))));
@@ -239,6 +241,7 @@
             this.cSbutton1.TabIndex = 11;
             this.cSbutton1.Text = "LOGIN";
             this.cSbutton1.UseVisualStyleBackColor = false;
+            this.cSbutton1.Click += new System.EventHandler(this.cSbutton1_Click);
             // 
             // Form1
             // 
