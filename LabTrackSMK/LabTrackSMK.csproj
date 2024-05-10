@@ -58,6 +58,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Petugas-Master\MasterSiswa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Petugas-Master\MasterSiswa.Designer.cs">
+      <DependentUpon>MasterSiswa.cs</DependentUpon>
+    </Compile>
     <Compile Include="petugas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,8 +194,6 @@
   <ItemGroup>
     <None Include="Resources\update.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Petugas-Master\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

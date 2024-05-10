@@ -32,13 +32,9 @@
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nickname = new System.Windows.Forms.Label();
             this.sidebar = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -46,7 +42,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nickname = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.masterSiswa1 = new LabTrackSMK.Petugas_Master.MasterSiswa();
             this.panel1.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.sidebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,63 +80,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "PETUGAS - PAGE";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = global::LabTrackSMK.Properties.Resources.Close_1_;
-            this.panel4.Location = new System.Drawing.Point(964, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(36, 36);
-            this.panel4.TabIndex = 9;
-            this.panel4.Click += new System.EventHandler(this.panel4_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = global::LabTrackSMK.Properties.Resources.Minimize;
-            this.panel5.Location = new System.Drawing.Point(926, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(36, 36);
-            this.panel5.TabIndex = 10;
-            this.panel5.Click += new System.EventHandler(this.panel5_Click);
-            // 
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Black;
+            this.panelContainer.Controls.Add(this.masterSiswa1);
             this.panelContainer.Location = new System.Drawing.Point(160, 36);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(839, 564);
             this.panelContainer.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Location = new System.Drawing.Point(3, 522);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(35, 35);
-            this.panel2.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Sintony", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 542);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 14);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Petugas";
-            // 
-            // nickname
-            // 
-            this.nickname.AutoSize = true;
-            this.nickname.BackColor = System.Drawing.Color.Transparent;
-            this.nickname.Font = new System.Drawing.Font("Sintony", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nickname.Location = new System.Drawing.Point(44, 522);
-            this.nickname.Name = "nickname";
-            this.nickname.Size = new System.Drawing.Size(50, 17);
-            this.nickname.TabIndex = 4;
-            this.nickname.Text = "Agung";
             // 
             // sidebar
             // 
@@ -158,6 +111,14 @@
             this.sidebar.Size = new System.Drawing.Size(160, 564);
             this.sidebar.TabIndex = 0;
             this.sidebar.Click += new System.EventHandler(this.sidebar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Location = new System.Drawing.Point(3, 522);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(35, 35);
+            this.panel2.TabIndex = 8;
             // 
             // button7
             // 
@@ -278,6 +239,57 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Sintony", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(44, 542);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 14);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Petugas";
+            // 
+            // nickname
+            // 
+            this.nickname.AutoSize = true;
+            this.nickname.BackColor = System.Drawing.Color.Transparent;
+            this.nickname.Font = new System.Drawing.Font("Sintony", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nickname.Location = new System.Drawing.Point(44, 522);
+            this.nickname.Name = "nickname";
+            this.nickname.Size = new System.Drawing.Size(50, 17);
+            this.nickname.TabIndex = 4;
+            this.nickname.Text = "Agung";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImage = global::LabTrackSMK.Properties.Resources.Close_1_;
+            this.panel4.Location = new System.Drawing.Point(964, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(36, 36);
+            this.panel4.TabIndex = 9;
+            this.panel4.Click += new System.EventHandler(this.panel4_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = global::LabTrackSMK.Properties.Resources.Minimize;
+            this.panel5.Location = new System.Drawing.Point(926, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(36, 36);
+            this.panel5.TabIndex = 10;
+            this.panel5.Click += new System.EventHandler(this.panel5_Click);
+            // 
+            // masterSiswa1
+            // 
+            this.masterSiswa1.AnimationEnabled = false;
+            this.masterSiswa1.BackColor = System.Drawing.Color.White;
+            this.masterSiswa1.Location = new System.Drawing.Point(0, 0);
+            this.masterSiswa1.Name = "masterSiswa1";
+            this.masterSiswa1.Size = new System.Drawing.Size(840, 564);
+            this.masterSiswa1.TabIndex = 0;
+            // 
             // petugas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +309,7 @@
             this.Load += new System.EventHandler(this.petugas_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
             this.sidebar.ResumeLayout(false);
             this.sidebar.PerformLayout();
             this.ResumeLayout(false);
@@ -322,5 +335,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private Petugas_Master.MasterSiswa masterSiswa1;
     }
 }
