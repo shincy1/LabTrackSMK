@@ -47,6 +47,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.masterSiswa1 = new LabTrackSMK.Petugas_Master.MasterSiswa();
+            this.settings1 = new LabTrackSMK.Petugas_Master.settings();
             this.panel1.SuspendLayout();
             this.panelContainer.SuspendLayout();
             this.sidebar.SuspendLayout();
@@ -83,6 +84,7 @@
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.Black;
+            this.panelContainer.Controls.Add(this.settings1);
             this.panelContainer.Controls.Add(this.masterSiswa1);
             this.panelContainer.Location = new System.Drawing.Point(160, 36);
             this.panelContainer.Name = "panelContainer";
@@ -289,6 +291,14 @@
             this.masterSiswa1.Name = "masterSiswa1";
             this.masterSiswa1.Size = new System.Drawing.Size(840, 564);
             this.masterSiswa1.TabIndex = 0;
+            this.masterSiswa1.Load += new System.EventHandler(this.masterSiswa1_Load);
+            // 
+            // settings1
+            // 
+            this.settings1.Location = new System.Drawing.Point(340, 127);
+            this.settings1.Name = "settings1";
+            this.settings1.Size = new System.Drawing.Size(488, 175);
+            this.settings1.TabIndex = 1;
             // 
             // petugas
             // 
@@ -336,5 +346,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private Petugas_Master.MasterSiswa masterSiswa1;
+        private Petugas_Master.settings settings1;
     }
 }

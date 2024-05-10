@@ -64,6 +64,12 @@
     <Compile Include="Petugas-Master\MasterSiswa.Designer.cs">
       <DependentUpon>MasterSiswa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Petugas-Master\settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Petugas-Master\settings.Designer.cs">
+      <DependentUpon>settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="petugas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Petugas-Master\MasterSiswa.resx">
+      <DependentUpon>MasterSiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Petugas-Master\settings.resx">
+      <DependentUpon>settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="petugas.resx">
       <DependentUpon>petugas.cs</DependentUpon>

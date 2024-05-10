@@ -30,9 +30,9 @@ namespace LabTrackSMK.Petugas_Master
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kelas_cm = new System.Windows.Forms.ComboBox();
             this.password_bx = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,6 +47,10 @@ namespace LabTrackSMK.Petugas_Master
             this.label5 = new System.Windows.Forms.Label();
             this.search_bx = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ban = new LabTrackSMK.Custom_Component.CSbutton();
+            this.delete = new LabTrackSMK.Custom_Component.CSbutton();
+            this.update = new LabTrackSMK.Custom_Component.CSbutton();
+            this.Insert = new LabTrackSMK.Custom_Component.CSbutton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.nis_bx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,12 +65,6 @@ namespace LabTrackSMK.Petugas_Master
             this.nama_bx = new System.Windows.Forms.TextBox();
             this.csPanel1 = new LabTrackSMK.Custom_Component.csPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ban = new LabTrackSMK.Custom_Component.CSbutton();
-            this.delete = new LabTrackSMK.Custom_Component.CSbutton();
-            this.update = new LabTrackSMK.Custom_Component.CSbutton();
-            this.Insert = new LabTrackSMK.Custom_Component.CSbutton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -186,7 +184,6 @@ namespace LabTrackSMK.Petugas_Master
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(85, 20);
             this.panel8.TabIndex = 20;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // label5
             // 
@@ -219,6 +216,88 @@ namespace LabTrackSMK.Petugas_Master
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(840, 45);
             this.panel5.TabIndex = 47;
+            // 
+            // ban
+            // 
+            this.ban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.ban.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.ban.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.ban.BorderRadius = 10;
+            this.ban.BorderSize = 1;
+            this.ban.FlatAppearance.BorderSize = 0;
+            this.ban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ban.Font = new System.Drawing.Font("Jura", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.ban.Image = global::LabTrackSMK.Properties.Resources.Ban_user;
+            this.ban.Location = new System.Drawing.Point(265, 8);
+            this.ban.Name = "ban";
+            this.ban.Size = new System.Drawing.Size(30, 30);
+            this.ban.TabIndex = 63;
+            this.ban.UseVisualStyleBackColor = false;
+            this.ban.Click += new System.EventHandler(this.nonaktifkanAkunSiswa);
+            // 
+            // delete
+            // 
+            this.delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.delete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.delete.BorderRadius = 10;
+            this.delete.BorderSize = 1;
+            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Jura", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.delete.Image = global::LabTrackSMK.Properties.Resources.delete_dark;
+            this.delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.delete.Location = new System.Drawing.Point(179, 8);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(82, 30);
+            this.delete.TabIndex = 62;
+            this.delete.Text = "     delete";
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.deleteBTN_Click);
+            // 
+            // update
+            // 
+            this.update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
+            this.update.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
+            this.update.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.update.BorderRadius = 10;
+            this.update.BorderSize = 0;
+            this.update.FlatAppearance.BorderSize = 0;
+            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update.Font = new System.Drawing.Font("Jura", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.ForeColor = System.Drawing.Color.White;
+            this.update.Image = global::LabTrackSMK.Properties.Resources.edit_light;
+            this.update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.update.Location = new System.Drawing.Point(94, 8);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(82, 30);
+            this.update.TabIndex = 61;
+            this.update.Text = "     update";
+            this.update.UseVisualStyleBackColor = false;
+            this.update.Click += new System.EventHandler(this.updateBTN_Click);
+            // 
+            // Insert
+            // 
+            this.Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
+            this.Insert.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
+            this.Insert.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.Insert.BorderRadius = 10;
+            this.Insert.BorderSize = 0;
+            this.Insert.FlatAppearance.BorderSize = 0;
+            this.Insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Insert.Font = new System.Drawing.Font("Jura", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Insert.ForeColor = System.Drawing.Color.White;
+            this.Insert.Image = global::LabTrackSMK.Properties.Resources.insert_light;
+            this.Insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Insert.Location = new System.Drawing.Point(9, 8);
+            this.Insert.Name = "Insert";
+            this.Insert.Size = new System.Drawing.Size(82, 30);
+            this.Insert.TabIndex = 60;
+            this.Insert.Text = "     Insert";
+            this.Insert.UseVisualStyleBackColor = false;
+            this.Insert.Click += new System.EventHandler(this.insertBTN_Click);
             // 
             // panel7
             // 
@@ -351,148 +430,44 @@ namespace LabTrackSMK.Petugas_Master
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Sintony", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sintony", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(150)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.Size = new System.Drawing.Size(500, 420);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // ban
-            // 
-            this.ban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ban.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ban.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ban.BorderRadius = 10;
-            this.ban.BorderSize = 1;
-            this.ban.FlatAppearance.BorderSize = 0;
-            this.ban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ban.Font = new System.Drawing.Font("Jura", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.ban.Image = global::LabTrackSMK.Properties.Resources.Ban_user;
-            this.ban.Location = new System.Drawing.Point(265, 8);
-            this.ban.Name = "ban";
-            this.ban.Size = new System.Drawing.Size(30, 30);
-            this.ban.TabIndex = 63;
-            this.ban.UseVisualStyleBackColor = false;
-            this.ban.Click += new System.EventHandler(this.nonaktifkanAkunSiswa);
-            // 
-            // delete
-            // 
-            this.delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.delete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.delete.BorderRadius = 10;
-            this.delete.BorderSize = 1;
-            this.delete.FlatAppearance.BorderSize = 0;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.Font = new System.Drawing.Font("Jura", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.delete.Image = global::LabTrackSMK.Properties.Resources.delete_dark;
-            this.delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.delete.Location = new System.Drawing.Point(179, 8);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(82, 30);
-            this.delete.TabIndex = 62;
-            this.delete.Text = "     delete";
-            this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.deleteBTN_Click);
-            // 
-            // update
-            // 
-            this.update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
-            this.update.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
-            this.update.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.update.BorderRadius = 10;
-            this.update.BorderSize = 0;
-            this.update.FlatAppearance.BorderSize = 0;
-            this.update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.update.Font = new System.Drawing.Font("Jura", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update.ForeColor = System.Drawing.Color.White;
-            this.update.Image = global::LabTrackSMK.Properties.Resources.edit_light;
-            this.update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.update.Location = new System.Drawing.Point(94, 8);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(82, 30);
-            this.update.TabIndex = 61;
-            this.update.Text = "     update";
-            this.update.UseVisualStyleBackColor = false;
-            this.update.Click += new System.EventHandler(this.updateBTN_Click);
-            // 
-            // Insert
-            // 
-            this.Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
-            this.Insert.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(177)))), ((int)(((byte)(156)))));
-            this.Insert.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.Insert.BorderRadius = 10;
-            this.Insert.BorderSize = 0;
-            this.Insert.FlatAppearance.BorderSize = 0;
-            this.Insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Insert.Font = new System.Drawing.Font("Jura", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Insert.ForeColor = System.Drawing.Color.White;
-            this.Insert.Image = global::LabTrackSMK.Properties.Resources.insert_light;
-            this.Insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Insert.Location = new System.Drawing.Point(9, 8);
-            this.Insert.Name = "Insert";
-            this.Insert.Size = new System.Drawing.Size(82, 30);
-            this.Insert.TabIndex = 60;
-            this.Insert.Text = "     Insert";
-            this.Insert.UseVisualStyleBackColor = false;
-            this.Insert.Click += new System.EventHandler(this.insertBTN_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(237, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 34);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(237, 91);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(58, 21);
-            this.button3.TabIndex = 63;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // masterSiswaReal
+            // MasterSiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.csPanel1);
             this.Controls.Add(this.password_bx);
             this.Controls.Add(this.label10);
@@ -566,7 +541,5 @@ namespace LabTrackSMK.Petugas_Master
         private LabTrackSMK.Custom_Component.CSbutton ban;
         private LabTrackSMK.Custom_Component.csPanel csPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Button button1;
-        private Button button3;
     }
 }

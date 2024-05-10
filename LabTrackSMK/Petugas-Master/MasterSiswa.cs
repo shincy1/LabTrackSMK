@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LabTrackSMK.Properties;
 
 namespace LabTrackSMK.Petugas_Master
 {
@@ -52,10 +53,6 @@ namespace LabTrackSMK.Petugas_Master
             showData();
             //LoadClassNames();
             FillClassComboBox();
-            /*buttonTimer = new Timer();
-            buttonTimer.Interval = 1000; // Atur interval sesuai kebutuhan Anda (dalam milidetik)
-            buttonTimer.Tick += ButtonTimer_Tick;
-            buttonTimer.Start();*/
 
             /// <Background>
             random = new Random();
@@ -104,7 +101,7 @@ namespace LabTrackSMK.Petugas_Master
         private void ButtonTimer_Tick(object sender, EventArgs e)
         {
             // Panggil metode atau jalankan kode yang ingin dijalankan secara teratur di sini
-            button1.PerformClick(); // Memanggil event Click dari tombol 1
+            //button1.PerformClick(); // Memanggil event Click dari tombol 1
         }
 
 
@@ -302,7 +299,7 @@ namespace LabTrackSMK.Petugas_Master
                             updateLoginCommand.Parameters.AddWithValue("@id_login", id_login);
                             updateLoginCommand.ExecuteNonQuery();
 
-                            
+
                         }
 
                         MessageBox.Show("Berhasil di Update!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -563,13 +560,40 @@ namespace LabTrackSMK.Petugas_Master
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        public delegate void ButtonClickEventHandler(object sender, EventArgs e);
+
+        // Buat event menggunakan delegate
+        public event ButtonClickEventHandler SettingsButtonClicked;
+
+        // Metode untuk menangani event dari settings1
+        public void HandleSettingsButtonClicked(object sender, EventArgs e)
         {
+            if (animationEnabled == false)
+            {
+                AnimationEnabled = true;
+                InitializeLeaves(); // Tambahkan inisialisasi daun di sini
+                InitializeTimer();
+            }
+            else
+            {
+                AnimationEnabled = false;
 
+                // Menghapus semua PictureBoxes daun
+                foreach (PictureBox leafPictureBox in leafPictureBoxes)
+                {
+                    this.Controls.Remove(leafPictureBox);
+                    leafPictureBox.Dispose();
+                }
+                // Membersihkan array PictureBoxes daun
+                Array.Clear(leafPictureBoxes, 0, leafPictureBoxes.Length);
+
+                // Memberhentikan dan membuang timer
+                timer.Stop();
+                timer.Dispose();
+
+            }
         }
-
-
-
+        /// </Backround>
 
         private void search_bx_TextChanged(object sender, EventArgs e)
         {
@@ -589,11 +613,6 @@ namespace LabTrackSMK.Petugas_Master
         private void deleteBTN_Click(object sender, EventArgs e)
         {
             deleteData();
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void kelas_cm_SelectedIndexChanged(object sender, EventArgs e)
@@ -623,21 +642,8 @@ namespace LabTrackSMK.Petugas_Master
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        /// </Backround>
+       
+        
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.CurrentRow != null && e.RowIndex != -1)
@@ -674,12 +680,6 @@ namespace LabTrackSMK.Petugas_Master
             }
         }
 
-
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void nonaktifkanAkunSiswa(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Selected)
@@ -710,44 +710,6 @@ namespace LabTrackSMK.Petugas_Master
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (animationEnabled == false)
-            {
-                //AnimationEnabled = true;
-                InitializeLeaves(); // Tambahkan inisialisasi daun di sini
-                InitializeTimer();
-            }
-            else
-            {
-                //AnimationEnabled = false;
-
-                // Menghapus semua PictureBoxes daun
-                foreach (PictureBox leafPictureBox in leafPictureBoxes)
-                {
-                    this.Controls.Remove(leafPictureBox);
-                    leafPictureBox.Dispose();
-                }
-                // Membersihkan array PictureBoxes daun
-                Array.Clear(leafPictureBoxes, 0, leafPictureBoxes.Length);
-
-                // Memberhentikan dan membuang timer
-                timer.Stop();
-                timer.Dispose();
-
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (animationEnabled == false)
-            {
-                AnimationEnabled = true;
-            }
-            else
-            {
-                AnimationEnabled = false;
-            }
-        }
+        
     }
 }

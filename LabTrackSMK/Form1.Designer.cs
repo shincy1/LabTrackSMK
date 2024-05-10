@@ -235,7 +235,7 @@
             this.cSbutton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cSbutton1.Font = new System.Drawing.Font("Jura", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cSbutton1.ForeColor = System.Drawing.Color.White;
-            this.cSbutton1.Location = new System.Drawing.Point(497, 339);
+            this.cSbutton1.Location = new System.Drawing.Point(489, 345);
             this.cSbutton1.Name = "cSbutton1";
             this.cSbutton1.Size = new System.Drawing.Size(223, 40);
             this.cSbutton1.TabIndex = 11;
