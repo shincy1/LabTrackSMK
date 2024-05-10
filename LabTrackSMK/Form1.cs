@@ -14,7 +14,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LabTrackSMK
 {
-
+    //tes
     public partial class Form1 : Form
     {
         public SqlConnection connection = new SqlConnection("Data Source=DESKTOP-UTSEEDN\\SQLEXPRESS;Initial Catalog=labDB;Integrated Security=True;");
