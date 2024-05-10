@@ -86,13 +86,13 @@ namespace LabTrackSMK
                             // Menyembunyikan form login
                             this.Hide();
 
-                            // Membuat objek masterInventaris dan menetapkan id_petugas/////////////////////
+                            //Membuat objek masterInventaris dan menetapkan id_petugas/////////////////////
                             //masterInventaris formMasterInventaris = new masterInventaris();
                             //masterInventaris.id_petugas = id_petugas;
 
                             // Membuat objek petugas dan menetapkan name
                             petugas menup = new petugas();
-                            //menup.name = box_uname.Text;
+                            petugas.name = box_uname.Text; 
 
                             // Menampilkan form masterInventaris dan petugas
                             //formMasterInventaris.Show();

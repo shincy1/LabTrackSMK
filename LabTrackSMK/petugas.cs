@@ -12,7 +12,7 @@ namespace LabTrackSMK
 {
     public partial class petugas : Form
     {
-        public string name;
+        public static string name { get; set; }
         bool sidebarExpand;
         private int sidebarMinimizedWidth = 40;
 
@@ -38,7 +38,7 @@ namespace LabTrackSMK
 
         private void petugas_Load(object sender, EventArgs e)
         {
-            nickname.Text = name;
+            
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -48,7 +48,7 @@ namespace LabTrackSMK
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //masterSiswaReal1.BringToFront();
+            masterSiswa1.BringToFront();
             button1.BackgroundImage = Properties.Resources.shade;
             button2.BackgroundImage = null;
             button3.BackgroundImage = null;
@@ -243,7 +243,7 @@ namespace LabTrackSMK
 
         private void petugas_Load_1(object sender, EventArgs e)
         {
-
+            nickname.Text = name;
         }
 
         private void button8_Click_1(object sender, EventArgs e)
