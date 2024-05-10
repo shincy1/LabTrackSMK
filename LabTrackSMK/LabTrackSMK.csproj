@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom Component\Csbutton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom Component\csPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +85,102 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background-login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ban-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insert-light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventaris%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventaris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kelas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lab%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lab%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Laporan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-bg%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-bg%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo%283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nav v3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pc-ilustration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\petugas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\siswa%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\siswa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\siswa-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Siswa-light-HD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Petugas-Master\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

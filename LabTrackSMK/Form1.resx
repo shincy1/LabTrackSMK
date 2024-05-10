@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Selamat datang di LabTrack, aplikasi pelaporan yang
+memudahkan Anda  untuk mencatat dan menganalisis 
+penggunaan laboratorium komputer di   sekolah.
+
+Dengan LabTrack, pantau aktivitas lab dengan mudah dan
+tingkatkan efisiensi pengelolaan lab Anda.</value>
+  </data>
 </root>
